@@ -14,7 +14,7 @@ import java.util.List;
 public class WorldAdapter extends FragmentStatePagerAdapter {
 
 
-    private List<Pair<BaseWorldFragment, String>> mFragmentsList = new ArrayList<>();
+    private List<Pair<BaseWorldFragment,String>> mFragmentsList = new ArrayList<>();
 
     public WorldAdapter(FragmentManager fm) {
         super(fm);
@@ -39,13 +39,8 @@ public class WorldAdapter extends FragmentStatePagerAdapter {
     }
 
 
-    public void setFragmentsList(List<Pair<BaseWorldFragment, String>> fragmentsList) {
+    public void setFragmentsList(List<Pair<BaseWorldFragment,String>> fragmentsList){
         mFragmentsList = fragmentsList;
-        for (int i = 0; i < mFragmentsList.size(); i++) {
-            Pair<BaseWorldFragment, String> baseWorldFragmentStringPair = mFragmentsList.get(i);
-            baseWorldFragmentStringPair.first.attachToViewPager();
-        }
-
         notifyDataSetChanged();
     }
 

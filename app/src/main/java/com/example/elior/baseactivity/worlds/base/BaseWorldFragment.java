@@ -20,6 +20,7 @@ public abstract class BaseWorldFragment<VM extends BaseWorldViewModel> extends B
         mViewModel = ViewModelProviders.of(this).get(getViewModelClass());
         mViewModel.init();
         subscribeToViewModel();
+        view.setRotationY(180);
         return view;
     }
 

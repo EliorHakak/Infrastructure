@@ -53,7 +53,7 @@ public class MyAccountFragment extends BaseFragment {
 
     @Override
     protected void initView(View view) {
-        mViewPager.setRotationY(180);
+        mViewPager.setRotationY(180f);
         listArrivedFromREST();
         mTabsLayout.setupWithViewPager(mViewPager);
 
