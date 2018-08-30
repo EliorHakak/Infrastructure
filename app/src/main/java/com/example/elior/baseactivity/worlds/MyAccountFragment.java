@@ -8,7 +8,7 @@ import com.example.elior.baseactivity.R;
 import com.example.elior.baseactivity.worlds.view.CustomTabLayout;
 import com.example.elior.baseactivity.worlds.view.FragmentsMapper;
 import com.example.elior.baseactivity.worlds.view.adapters.WorldAdapter;
-import com.example.elior.baseactivity.worlds.base.BaseFragment;
+import com.example.elior.baseactivity.base.BaseFragment;
 
 import java.util.ArrayList;
 import java.util.List;

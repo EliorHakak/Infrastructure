@@ -1,4 +1,4 @@
-package com.example.elior.baseactivity.activity;
+package com.example.elior.baseactivity.base;
 
 import android.app.Activity;
 import android.content.Context;

@@ -1,22 +1,24 @@
-package com.example.elior.baseactivity.worlds.view.adapters;
-
+package com.example.elior.baseactivity.wizards.view;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.util.Pair;
 
-import com.example.elior.baseactivity.worlds.base.BaseWorldFragment;
+import com.example.elior.baseactivity.wizards.fragment.BaseWizardFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class WorldAdapter extends FragmentStatePagerAdapter {
+/**
+ * Created by moveosoftware on 8/30/18
+ */
+
+public class WizardAdapter extends FragmentStatePagerAdapter {
 
 
-    private List<Pair<BaseWorldFragment, String>> mFragmentsList = new ArrayList<>();
+    private List<BaseWizardFragment> mFragmentsList = new ArrayList<>();
 
-    public WorldAdapter(FragmentManager fm) {
+    public WizardAdapter(FragmentManager fm) {
         super(fm);
     }
 
@@ -30,7 +32,7 @@ public class WorldAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return mFragmentsList.get(position).first;
+        return mFragmentsList.get(position);
     }
 
     @Override
@@ -39,13 +41,9 @@ public class WorldAdapter extends FragmentStatePagerAdapter {
     }
 
 
-    public void setFragmentsList(List<Pair<BaseWorldFragment, String>> fragmentsList) {
+    public void setFragmentsList(List<BaseWizardFragment> fragmentsList) {
         mFragmentsList = fragmentsList;
         notifyDataSetChanged();
     }
 
-    @Override
-    public CharSequence getPageTitle(int position) {
-        return mFragmentsList.get(position).second;
-    }
 }
