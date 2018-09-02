@@ -5,7 +5,7 @@ import android.support.v4.view.ViewPager;
 
 import com.example.elior.baseactivity.base.BaseSmartActivity;
 import com.example.elior.baseactivity.wizards.fragment.BaseWizardFragment;
-import com.example.elior.baseactivity.wizards.model.FieldsPopulator;
+import com.example.elior.baseactivity.wizards.populate.FieldsPopulator;
 import com.example.elior.baseactivity.wizards.view.LayoutConfig;
 import com.example.elior.baseactivity.wizards.view.WizardAdapter;
 import com.example.elior.baseactivity.wizards.viewmodel.BaseWizardViewModel;

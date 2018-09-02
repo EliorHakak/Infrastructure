@@ -1,7 +1,7 @@
 package com.example.elior.baseactivity.wizards.fragment;
 
 import com.example.elior.baseactivity.base.BaseSmartFragment;
-import com.example.elior.baseactivity.wizards.model.FieldsPopulator;
+import com.example.elior.baseactivity.wizards.populate.FieldsPopulator;
 import com.example.elior.baseactivity.wizards.populate.Populateable;
 import com.example.elior.baseactivity.wizards.viewmodel.BaseWizardViewModel;
 
