@@ -29,4 +29,13 @@ public class BottomConfig {
             return new BottomConfig(returnText, proceedText);
         }
     }
+
+
+    public String getProceedText() {
+        return proceedText;
+    }
+
+    public String getReturnText() {
+        return returnText;
+    }
 }

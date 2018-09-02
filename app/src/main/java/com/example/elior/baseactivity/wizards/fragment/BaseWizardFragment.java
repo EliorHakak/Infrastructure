@@ -1,16 +1,56 @@
 package com.example.elior.baseactivity.wizards.fragment;
 
+import android.arch.lifecycle.Observer;
+import android.content.Context;
+import android.support.annotation.Nullable;
+import android.util.Log;
+import android.view.View;
+
 import com.example.elior.baseactivity.base.BaseFragment;
-import com.example.elior.baseactivity.wizards.populate.FieldsPopulator;
-import com.example.elior.baseactivity.wizards.populate.Populateable;
+import com.example.elior.baseactivity.wizards.PopulatorProvider;
+import com.example.elior.baseactivity.wizards.conditions.ConditionChecker;
 import com.example.elior.baseactivity.wizards.view.BottomConfig;
 
 /**
  * Created by moveosoftware on 8/30/18
  */
 
-public abstract class BaseWizardFragment<T extends FieldsPopulator> extends BaseFragment implements Populateable<T> {
+public abstract class BaseWizardFragment<T> extends BaseFragment implements ConditionChecker {
 
+    private String TAG = this.getClass().getSimpleName();
+    public PopulatorProvider<T> provider;
 
     public abstract BottomConfig getBottomConfig();
+
+    public abstract void collectData(T t);
+
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        try {
+            provider = (PopulatorProvider<T>) context;
+        } catch (ClassCastException e) {
+            Log.d(TAG, "Containing activity must implement PopulatorProvider");
+        }
+    }
+
+    @Override
+    protected void initView(View view) {
+        provider.getPopulator().observe(this, new Observer<T>() {
+            @Override
+            public void onChanged(@Nullable T t) {
+                populate(t);
+            }
+        });
+    }
+
+    @Override
+    public void onDetach() {
+        provider = null;
+        super.onDetach();
+    }
+
+    public abstract void populate(T t);
 }
+

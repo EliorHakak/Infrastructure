@@ -6,5 +6,4 @@ public abstract class BaseViewModel extends ViewModel {
 
     public abstract void init();
 
-
 }

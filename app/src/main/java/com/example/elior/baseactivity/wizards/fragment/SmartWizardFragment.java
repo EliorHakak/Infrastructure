@@ -1,18 +1,41 @@
 package com.example.elior.baseactivity.wizards.fragment;
 
-import com.example.elior.baseactivity.base.BaseSmartFragment;
-import com.example.elior.baseactivity.wizards.populate.FieldsPopulator;
-import com.example.elior.baseactivity.wizards.populate.Populateable;
-import com.example.elior.baseactivity.wizards.viewmodel.BaseWizardViewModel;
+import android.arch.lifecycle.ViewModelProviders;
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.example.elior.baseactivity.base.BaseViewModel;
+import com.example.elior.baseactivity.wizards.conditions.ConditionChecker;
 
 /**
  * Created by moveosoftware on 8/30/18
  */
 
-public abstract class SmartWizardFragment
-        <T extends FieldsPopulator, VM extends BaseWizardViewModel<T>>
-        extends BaseSmartFragment<VM>
-        implements Populateable<T> {
+public abstract class SmartWizardFragment<T, VM extends BaseViewModel> extends BaseWizardFragment<T> implements ConditionChecker {
 
-    abstract void collectData(T t);
+    private VM mViewModel;
+
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = super.onCreateView(inflater, container, savedInstanceState);
+        mViewModel = ViewModelProviders.of(this).get(getViewModelClass());
+        observe();
+        mViewModel.init();
+        return view;
+    }
+
+    public VM getViewModel() {
+        return mViewModel;
+    }
+
+    public abstract Class<VM> getViewModelClass();
+
+    public abstract void observe();
+
 }

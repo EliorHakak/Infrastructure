@@ -5,10 +5,10 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 
 import com.example.elior.baseactivity.R;
+import com.example.elior.baseactivity.base.BaseFragment;
 import com.example.elior.baseactivity.worlds.view.CustomTabLayout;
 import com.example.elior.baseactivity.worlds.view.FragmentsMapper;
 import com.example.elior.baseactivity.worlds.view.adapters.WorldAdapter;
-import com.example.elior.baseactivity.base.BaseFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,7 +37,7 @@ public class MyAccountFragment extends BaseFragment {
     }
 
 
-    public void listArrivedFromREST(){
+    public void listArrivedFromREST() {
         WorldAdapter adapter = new WorldAdapter(getChildFragmentManager());
         List<Integer> listOfFragments = new ArrayList<>();
         listOfFragments.add(1);
@@ -53,17 +53,13 @@ public class MyAccountFragment extends BaseFragment {
 
     @Override
     protected void initView(View view) {
+        mTabsLayout = view.findViewById(R.id.my_account_tab_layout);
+        mViewPager = view.findViewById(R.id.my_account_view_pager);
+
+
         mViewPager.setRotationY(180);
         listArrivedFromREST();
         mTabsLayout.setupWithViewPager(mViewPager);
-
-    }
-    @Override
-    protected void findView(View view) {
-        mTabsLayout = (CustomTabLayout) view.findViewById(R.id.my_account_tab_layout);
-        mViewPager = (ViewPager) view.findViewById(R.id.my_account_view_pager);
-
-            //TODO: init viewpager
 
     }
 

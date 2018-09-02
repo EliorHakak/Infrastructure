@@ -17,7 +17,7 @@ public abstract class BaseSmartActivity<VM extends BaseViewModel> extends BaseAc
         super.onCreate(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(getViewModelClass());
         mViewModel.init();
-        subscribeToViewModel();
+        observe();
     }
 
     public VM getViewModel() {
@@ -26,5 +26,6 @@ public abstract class BaseSmartActivity<VM extends BaseViewModel> extends BaseAc
 
     public abstract Class<VM> getViewModelClass();
 
-    public abstract void subscribeToViewModel();
+    public abstract void observe();
+
 }

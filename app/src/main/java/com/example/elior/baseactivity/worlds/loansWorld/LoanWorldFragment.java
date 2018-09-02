@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 import com.example.elior.baseactivity.R;
 import com.example.elior.baseactivity.worlds.base.BaseWorldFragment;
-import com.example.elior.baseactivity.worlds.base.BaseWorldViewModel;
 import com.example.elior.baseactivity.worlds.loansWorld.viewModel.LoansWorldViewModel;
 
 
@@ -35,11 +34,6 @@ public class LoanWorldFragment extends BaseWorldFragment<String, LoansWorldViewM
 
     @Override
     protected void initView(View view) {
-        // Toast.makeText(getActivity(),  "Bundle : " + getArguments().getInt("someInt"), Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    protected void findView(View view) {
         mainText = (TextView) view.findViewById(R.id.fragmet2_text);
     }
 
@@ -50,8 +44,8 @@ public class LoanWorldFragment extends BaseWorldFragment<String, LoansWorldViewM
     }
 
     @Override
-    public void subscribeToViewModel() {
-        getViewModel().getInitMutableLiveData().observe(this, new Observer<String>() {
+    public void observe() {
+        getViewModel().getLiveData().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
 

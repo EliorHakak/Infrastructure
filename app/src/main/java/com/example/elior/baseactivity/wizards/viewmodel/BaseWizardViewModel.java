@@ -1,17 +1,22 @@
 package com.example.elior.baseactivity.wizards.viewmodel;
 
+import android.arch.lifecycle.MutableLiveData;
+
 import com.example.elior.baseactivity.base.BaseViewModel;
-import com.example.elior.baseactivity.wizards.populate.FieldsPopulator;
 
 /**
  * Created by moveosoftware on 8/30/18
  */
 
-public abstract class BaseWizardViewModel<T extends FieldsPopulator> extends BaseViewModel {
+public abstract class BaseWizardViewModel<T> extends BaseViewModel {
 
-    private T populator;
+    private MutableLiveData<T> populator;
 
-    public T getPopulator() {
+    public MutableLiveData<T> getPopulator() {
         return populator;
+    }
+
+    public <T> T applyUpdates(T t) {
+        return t;
     }
 }

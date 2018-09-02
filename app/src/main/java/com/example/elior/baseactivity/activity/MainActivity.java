@@ -1,10 +1,13 @@
 package com.example.elior.baseactivity.activity;
 
+import android.arch.lifecycle.MutableLiveData;
+import android.arch.lifecycle.Observer;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.elior.baseactivity.R;
 
@@ -21,18 +24,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         context = this;
 
-/*        findViewById(R.id.fragment1_btn).setOnClickListener(new View.OnClickListener() {
+        MutableLiveData<String> stringMutableLiveData = new MutableLiveData<>();
+        stringMutableLiveData.setValue("Moshe ata lo kipod, ata ashach");
+
+        stringMutableLiveData.observe(this, new Observer<String>() {
             @Override
-            public void onClick(View view) {
-                ActivityOne.newInstance(context,null);
+            public void onChanged(@Nullable String s) {
+                Toast.makeText(context, s, Toast.LENGTH_SHORT).show();
             }
         });
 
-        findViewById(R.id.fragment2_btn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ActivityOne.newInstance(context,null);
-            }
-        });*/
+        stringMutableLiveData.setValue("Moshe ata Alof <3");
+
     }
 }

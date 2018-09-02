@@ -4,7 +4,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
+import com.example.elior.baseactivity.base.BaseViewModel;
 import com.example.elior.baseactivity.wizards.fragment.BaseWizardFragment;
+import com.example.elior.baseactivity.wizards.fragment.SmartWizardFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,10 +15,10 @@ import java.util.List;
  * Created by moveosoftware on 8/30/18
  */
 
-public class WizardAdapter extends FragmentStatePagerAdapter {
+public class WizardAdapter<T> extends FragmentStatePagerAdapter {
 
 
-    private List<BaseWizardFragment> mFragmentsList = new ArrayList<>();
+    private List<BaseWizardFragment<T>> mFragmentsList = new ArrayList<>();
 
     public WizardAdapter(FragmentManager fm) {
         super(fm);
@@ -31,7 +33,7 @@ public class WizardAdapter extends FragmentStatePagerAdapter {
     }
 
     @Override
-    public Fragment getItem(int position) {
+    public BaseWizardFragment<T> getItem(int position) {
         return mFragmentsList.get(position);
     }
 
@@ -41,7 +43,7 @@ public class WizardAdapter extends FragmentStatePagerAdapter {
     }
 
 
-    public void setFragmentsList(List<BaseWizardFragment> fragmentsList) {
+    public void setFragmentsList(List<BaseWizardFragment<T>> fragmentsList) {
         mFragmentsList = fragmentsList;
         notifyDataSetChanged();
     }

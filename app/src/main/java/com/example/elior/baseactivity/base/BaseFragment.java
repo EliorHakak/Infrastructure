@@ -16,7 +16,6 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v = (ViewGroup) inflater.inflate(getLayout(), container, false);
-        findView(v);
         initView(v);
         return v;
     }
@@ -29,17 +28,5 @@ public abstract class BaseFragment extends Fragment {
 
 
     protected abstract void initView(View view);
-
-
-    /**
-     * Use this method to initialize view components. This method is called after
-     * findView
-     */
-    protected abstract void findView(View view);
-
-    public void attachToViewPager() {
-        v.setRotationY(180);
-    }
-
 
 }

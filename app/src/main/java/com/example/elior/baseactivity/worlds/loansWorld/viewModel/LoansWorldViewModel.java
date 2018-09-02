@@ -8,6 +8,6 @@ public class LoansWorldViewModel extends BaseWorldViewModel<String> {
     @Override
     public void init() {
         //TODO: call retrofit and setvalue onSucces callbackk
-        getInitMutableLiveData().setValue("test");
+        getLiveData().setValue("test");
     }
 }

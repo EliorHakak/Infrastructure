@@ -7,11 +7,11 @@ import com.example.elior.baseactivity.base.BaseViewModel;
 public abstract class BaseWorldViewModel<T> extends BaseViewModel {
 
 
-    private MutableLiveData<T> initMutableLiveData = new MutableLiveData<>();
+    private MutableLiveData<T> mLiveData = new MutableLiveData<>();
 
 
-    public MutableLiveData<T> getInitMutableLiveData() {
-        return initMutableLiveData;
+    public MutableLiveData<T> getLiveData() {
+        return mLiveData;
     }
 
 }

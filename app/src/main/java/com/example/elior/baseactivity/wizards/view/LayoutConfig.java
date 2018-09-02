@@ -5,4 +5,7 @@ package com.example.elior.baseactivity.wizards.view;
  */
 
 public class LayoutConfig {
+
+    public BottomView mBottomView;
+
 }
