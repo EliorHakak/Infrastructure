@@ -22,8 +22,8 @@ public abstract class BaseSmartFragment<VM extends BaseViewModel> extends BaseFr
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = super.onCreateView(inflater, container, savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(getViewModelClass());
-        observe();
         mViewModel.init();
+        observe();
         return view;
     }
 

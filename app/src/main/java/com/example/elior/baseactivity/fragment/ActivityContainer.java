@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.elior.baseactivity.R;
-import com.example.elior.baseactivity.worlds.MyAccountFragment;
+import com.example.elior.baseactivity.mainBottomNavigation.MyAccountFragment;
 import com.example.elior.baseactivity.worlds.loansWorld.LoanWorldFragment;
 
 public class ActivityContainer extends AppCompatActivity {
