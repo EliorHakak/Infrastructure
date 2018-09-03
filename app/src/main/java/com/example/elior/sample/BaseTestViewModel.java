@@ -1,4 +1,4 @@
-package com.example.elior.baseactivity.wizards.viewmodel;
+package com.example.elior.sample;
 
 import com.example.elior.baseactivity.base.BaseViewModel;
 

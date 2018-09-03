@@ -3,10 +3,10 @@ package com.example.elior.baseactivity.wizards.view;
 public class BottomConfig {
 
     private String proceedText;
-    private String returnText;
+    private String backText;
 
     public BottomConfig(String returnText, String proceedText) {
-        this.returnText = returnText;
+        this.backText = returnText;
         this.proceedText = proceedText;
     }
 
@@ -20,7 +20,7 @@ public class BottomConfig {
             return this;
         }
 
-        public Builder setReturnText(String returnText) {
+        public Builder setBackText(String returnText) {
             this.returnText = returnText;
             return this;
         }
@@ -35,7 +35,7 @@ public class BottomConfig {
         return proceedText;
     }
 
-    public String getReturnText() {
-        return returnText;
+    public String getBackText() {
+        return backText;
     }
 }

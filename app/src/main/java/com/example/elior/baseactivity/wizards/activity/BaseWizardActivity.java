@@ -8,7 +8,7 @@ import android.widget.Toast;
 import com.example.elior.baseactivity.base.BaseSmartActivity;
 import com.example.elior.baseactivity.wizards.PopulatorProvider;
 import com.example.elior.baseactivity.wizards.fragment.BaseWizardFragment;
-import com.example.elior.baseactivity.wizards.view.BottomView;
+import com.example.elior.baseactivity.wizards.view.ButtonBarView;
 import com.example.elior.baseactivity.wizards.view.LayoutConfig;
 import com.example.elior.baseactivity.wizards.view.WizardAdapter;
 import com.example.elior.baseactivity.wizards.viewmodel.BaseWizardViewModel;
@@ -24,7 +24,7 @@ public abstract class BaseWizardActivity<T, VM extends BaseWizardViewModel<T>> e
     private static final int PAGE_OFFSET_LIMIT = 2;
     private ViewPager mPager;
     private WizardAdapter mAdapter;
-    MutableLiveData<T> populator;
+    private MutableLiveData<T> populator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +47,7 @@ public abstract class BaseWizardActivity<T, VM extends BaseWizardViewModel<T>> e
 
 
     private void initConfig(final LayoutConfig layoutConfig) {
-        layoutConfig.mBottomView.setListener(new BottomView.BottomClickListener() {
+        layoutConfig.mButtonBarView.setListener(new ButtonBarView.BottomClickListener() {
             @Override
             public void onProceedClick() {
                 BaseWizardFragment<T> currentItem = mAdapter.getItem(mPager.getCurrentItem());
@@ -58,7 +58,7 @@ public abstract class BaseWizardActivity<T, VM extends BaseWizardViewModel<T>> e
                     currentItem.collectData(populator.getValue());
                     populator.setValue(populator.getValue());
 
-                    layoutConfig.mBottomView.applyConfig(currentItem.getBottomConfig());
+                    layoutConfig.mButtonBarView.applyConfig(currentItem.getBottomConfig());
 
                     proceed();
                 }

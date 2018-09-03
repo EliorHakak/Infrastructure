@@ -1,4 +1,4 @@
-package com.example.elior.baseactivity.activity;
+package com.example.elior.sample;
 
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.Observer;

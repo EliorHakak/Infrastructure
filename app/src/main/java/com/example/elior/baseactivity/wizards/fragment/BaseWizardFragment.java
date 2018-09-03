@@ -8,14 +8,14 @@ import android.view.View;
 
 import com.example.elior.baseactivity.base.BaseFragment;
 import com.example.elior.baseactivity.wizards.PopulatorProvider;
-import com.example.elior.baseactivity.wizards.conditions.ConditionChecker;
+
 import com.example.elior.baseactivity.wizards.view.BottomConfig;
 
 /**
  * Created by moveosoftware on 8/30/18
  */
 
-public abstract class BaseWizardFragment<T> extends BaseFragment implements ConditionChecker {
+public abstract class BaseWizardFragment<T> extends BaseFragment{
 
     private String TAG = this.getClass().getSimpleName();
     public PopulatorProvider<T> provider;
@@ -24,6 +24,7 @@ public abstract class BaseWizardFragment<T> extends BaseFragment implements Cond
 
     public abstract void collectData(T t);
 
+    public abstract boolean conditionSatisfied();
 
     @Override
     public void onAttach(Context context) {

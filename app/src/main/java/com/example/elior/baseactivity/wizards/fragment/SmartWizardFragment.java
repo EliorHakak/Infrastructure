@@ -9,13 +9,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.elior.baseactivity.base.BaseViewModel;
-import com.example.elior.baseactivity.wizards.conditions.ConditionChecker;
 
 /**
  * Created by moveosoftware on 8/30/18
  */
 
-public abstract class SmartWizardFragment<T, VM extends BaseViewModel> extends BaseWizardFragment<T> implements ConditionChecker {
+public abstract class SmartWizardFragment<T, VM extends BaseViewModel> extends BaseWizardFragment<T>{
 
     private VM mViewModel;
 
