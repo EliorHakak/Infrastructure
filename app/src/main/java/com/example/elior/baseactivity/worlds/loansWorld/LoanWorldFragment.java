@@ -34,6 +34,7 @@ public class LoanWorldFragment extends BaseWorldFragment<String, LoansWorldViewM
 
     @Override
     protected void initView(View view) {
+        view.setRotationY(180);
         mainText = (TextView) view.findViewById(R.id.fragmet2_text);
     }
 
