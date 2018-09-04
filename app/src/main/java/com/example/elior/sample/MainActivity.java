@@ -5,36 +5,54 @@ import android.arch.lifecycle.Observer;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.elior.baseactivity.R;
+import com.example.elior.baseactivity.wizards.activity.BaseWizardActivity;
+import com.example.elior.baseactivity.wizards.fragment.BaseWizardFragment;
+import com.example.elior.baseactivity.wizards.view.LayoutConfig;
+import com.example.elior.sample.model.TestObject;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.List;
 
 
-    Button button1;
-    Button button2;
-    Context context;
+//TODO: AALLL
+public class MainActivity extends BaseWizardActivity<TestObject, TestViewModel> {
+    @Override
+    public ViewPager getViewPager() {
+        return null;
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        context = this;
+    public LayoutConfig getLayoutConfig() {
+        return null;
+    }
 
-        MutableLiveData<String> stringMutableLiveData = new MutableLiveData<>();
-        stringMutableLiveData.setValue("Moshe ata lo kipod, ata ashach");
+    @Override
+    public List<BaseWizardFragment<TestObject>> getFragments() {
+        return null;
+    }
 
-        stringMutableLiveData.observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                Toast.makeText(context, s, Toast.LENGTH_SHORT).show();
-            }
-        });
+    @Override
+    public Class<TestViewModel> getViewModelClass() {
+        return TestViewModel.class;
+    }
 
-        stringMutableLiveData.setValue("Moshe ata Alof <3");
+    @Override
+    public void observe() {
+
+    }
+
+    @Override
+    protected int getLayout() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    protected void initView() {
 
     }
 }

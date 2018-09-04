@@ -18,6 +18,7 @@ import com.example.elior.baseactivity.wizards.view.BottomConfig;
 public abstract class BaseWizardFragment<T> extends BaseFragment{
 
     private String TAG = this.getClass().getSimpleName();
+
     public PopulatorProvider<T> provider;
 
     public abstract BottomConfig getBottomConfig();
@@ -38,12 +39,7 @@ public abstract class BaseWizardFragment<T> extends BaseFragment{
 
     @Override
     protected void initView(View view) {
-        provider.getPopulator().observe(this, new Observer<T>() {
-            @Override
-            public void onChanged(@Nullable T t) {
-                populate(t);
-            }
-        });
+        provider.getPopulator().observe(this, this::populate);
     }
 
     @Override
