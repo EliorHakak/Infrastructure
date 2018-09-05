@@ -47,6 +47,9 @@ public abstract class BaseWizardActivity<T, VM extends BaseWizardViewModel<T>> e
 
 
     private void initConfig(final LayoutConfig layoutConfig) {
+
+
+
         layoutConfig.mButtonBarView.setListener(new ButtonBarView.BottomClickListener() {
             @Override
             public void onProceedClick() {

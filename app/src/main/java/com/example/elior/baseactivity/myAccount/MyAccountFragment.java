@@ -1,4 +1,4 @@
-package com.example.elior.baseactivity.mainBottomNavigation;
+package com.example.elior.baseactivity.myAccount;
 
 import android.arch.lifecycle.Observer;
 import android.os.Bundle;
@@ -13,7 +13,6 @@ import com.example.elior.baseactivity.worlds.view.CustomTabLayout;
 import com.example.elior.baseactivity.worlds.view.FragmentsMapper;
 import com.example.elior.baseactivity.worlds.view.adapters.WorldAdapter;
 
-import java.util.ArrayList;
 import java.util.List;
 
 

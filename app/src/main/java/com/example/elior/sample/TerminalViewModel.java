@@ -7,7 +7,7 @@ import com.example.elior.baseactivity.wizards.viewmodel.BaseWizardViewModel;
  * Created by moveosoftware on 9/2/18
  */
 
-public class TestViewModel extends BaseWizardViewModel<TestObject> {
+public class TerminalViewModel extends BaseWizardViewModel<TestObject> {
     @Override
     public void init() {
 

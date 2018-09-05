@@ -1,12 +1,6 @@
 package com.example.elior.sample;
 
-import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.elior.baseactivity.R;
@@ -16,7 +10,7 @@ import com.example.elior.sample.model.TestObject;
 
 
 //TODO: smart
-public class TestFragmentStep1 extends BaseWizardFragment<TestObject> {
+public class TerminalFragmentStep1 extends BaseWizardFragment<TestObject> {
 
     private EditText mEditext;
 
@@ -54,6 +48,6 @@ public class TestFragmentStep1 extends BaseWizardFragment<TestObject> {
 
     @Override
     protected int getLayout() {
-        return R.layout.test_fragment_step1;
+        return R.layout.terminal_fragment_step1;
     }
 }

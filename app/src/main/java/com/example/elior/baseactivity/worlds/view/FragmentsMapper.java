@@ -1,19 +1,20 @@
 package com.example.elior.baseactivity.worlds.view;
 
 
-import android.support.v4.app.Fragment;
 import android.util.Pair;
 
+import com.example.elior.baseactivity.wizards.fragment.BaseWizardFragment;
 import com.example.elior.baseactivity.worlds.base.BaseWorldFragment;
 import com.example.elior.baseactivity.worlds.checksWorld.CheckWorldFragment;
 import com.example.elior.baseactivity.worlds.loansWorld.LoanWorldFragment;
+import com.example.elior.sample.TerminalFragmentStep1;
+import com.example.elior.sample.TerminalFragmentStep2;
+import com.example.elior.sample.model.TestObject;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class FragmentsMapper {
-
-    List<String> tabNames = new ArrayList<>();
 
 
     public static final int LOAN_WORLD = 1;
@@ -40,6 +41,16 @@ public class FragmentsMapper {
                     break;
             }
         }
+        return fragmentsList;
+
+    }
+
+    public List<BaseWizardFragment<TestObject>> getWizards() {
+        List<BaseWizardFragment<TestObject>> fragmentsList = new ArrayList<>();
+        fragmentsList.add(new TerminalFragmentStep1());
+        fragmentsList.add(new TerminalFragmentStep2());
+
+
         return fragmentsList;
 
     }}

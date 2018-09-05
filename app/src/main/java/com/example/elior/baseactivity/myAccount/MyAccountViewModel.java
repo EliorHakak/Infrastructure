@@ -1,6 +1,5 @@
-package com.example.elior.baseactivity.mainBottomNavigation;
+package com.example.elior.baseactivity.myAccount;
 
-import com.example.elior.baseactivity.base.BaseViewModel;
 import com.example.elior.baseactivity.worlds.base.BaseWorldViewModel;
 
 import java.util.ArrayList;
